@@ -8,11 +8,14 @@ Re-creates the official Telegraf docker container with the following tools added
 - `nvme-cli`
 - `sensors` (lm-sensors)
 - `mtr` (mtr-tiny)
+- `sudo`
 
 Built automatically by DockerHub Cloud. Use this image:
 ```
 docker pull golift/telegraf
 ```
+
+**In addition to sudo being installed, sudoers entries are added for `smartctl`, `ipmitool` and `nvme`.**
 
 ## TODO
 
