@@ -2,7 +2,7 @@
 
 ## Why
 
-Provides a telegraf docker image with added tools for monitoring disks, sensors and IPMI.
+Provides a telegraf docker image with added tools for monitoring disks, sensors and IPMI. This exists because the base telegraf Docker image makes it difficult to monitor some system metrics. See [this issue](https://github.com/influxdata/influxdata-docker/issues/563) for more info about those difficulties.
 
 ## What
 
