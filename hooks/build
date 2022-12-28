@@ -6,8 +6,8 @@ if ! (docker buildx inspect | grep -Eq 'docker-container'); then
 fi
 
 echo "Building AMD64."
-docker buildx build --load --tag current:amd64 --platform linux/amd64
+docker buildx build --load --tag current:amd64 --platform linux/amd64 .
 echo "Building ARM64."
-docker buildx build --load --tag current:arm64 --platform linux/arm64/v8
+docker buildx build --load --tag current:arm64 --platform linux/arm64/v8 .
 echo "Building ARM32."
-docker buildx build --load --tag current:arm32 --platform linux/arm/v7
+docker buildx build --load --tag current:arm32 --platform linux/arm/v7 .
