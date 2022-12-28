@@ -16,7 +16,3 @@ docker pull golift/telegraf
 ```
 
 **In addition to sudo being installed, sudoers entries are added for `smartctl`, `ipmitool` and `nvme`.**
-
-## TODO
-
-- multi-arch
