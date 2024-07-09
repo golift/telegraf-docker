@@ -2,7 +2,9 @@
 
 ## Why
 
-Provides a telegraf docker image with added tools for monitoring disks, sensors and IPMI. This exists because the base telegraf Docker image makes it difficult to monitor some system metrics. See [this issue](https://github.com/influxdata/influxdata-docker/issues/563) for more info about those difficulties.
+Provides a telegraf docker image with added tools for monitoring disks, sensors and IPMI.
+This exists because the base telegraf Docker image makes it difficult to monitor some system metrics.
+See [this issue](https://github.com/influxdata/influxdata-docker/issues/563) for more info about those difficulties.
 
 ## What
 
@@ -14,22 +16,35 @@ Re-creates the official [Telegraf docker container](https://hub.docker.com/_/tel
 - `mtr` (mtr-tiny)
 - `sudo`
 
-**In addition to sudo being installed, sudoers entries are added for `smartctl`, `ipmitool` and `nvme`.**
+**In addition to sudo being installed,
+[sudoers entries](https://github.com/golift/telegraf-docker/blob/main/Dockerfile#L6-L8)
+are added for `smartctl`, `ipmitool` and `nvme`.**
 
 ## How
 
-Built automatically by DockerHub Cloud. [Use this image](https://hub.docker.com/repository/registry.docker.io/golift/telegraf/tags):
+Built automatically by DockerHub Cloud.
+[Use the following repository](https://hub.docker.com/repository/registry.docker.io/golift/telegraf/tags).
+
 ```
 docker pull golift/telegraf
 ```
 
+**This is a Docker Open Source Sposnsored project, so it has no pull limits.**
+
 ## When
 
-The renovate bot should automatically merge a pull request with a new Telegraf Docker manifest when a new Telegraf version is released.
+The renovate automatically merges pull request with a new Telegraf Docker manifest when a new Telegraf version is released.
 This auto-merge to the `main` branch triggers Docker Cloud to re-build this image.
 
-In theory, this should always be up to date with the `latest` tag of `telegraf` on Dockerhub. 
+This should always be up to date with the `latest` tag of `telegraf` on Dockerhub. 
 The built manifest supports the same 3 architectures as the original image.
+
+## Where
+
+Home: [https://golift.io](https://golift.io)
+GitHub: [https://github.com/golift/telegraf-docker](https://github.com/golift/telegraf-docker)
+Docker: [https://hub.docker.com/r/golift/telegraf](https://hub.docker.com/r/golift/telegraf/)
+Discord: [https://golift.io/discord](https://golift.io/discord)
 
 ## Problems
 
