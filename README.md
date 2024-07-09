@@ -41,10 +41,10 @@ The built manifest supports the same 3 architectures as the original image.
 
 ## Where
 
-Home: [https://golift.io](https://golift.io)
-GitHub: [https://github.com/golift/telegraf-docker](https://github.com/golift/telegraf-docker)
-Docker: [https://hub.docker.com/r/golift/telegraf](https://hub.docker.com/r/golift/telegraf/)
-Discord: [https://golift.io/discord](https://golift.io/discord)
+- Home: [https://golift.io](https://golift.io)
+- GitHub: [https://github.com/golift/telegraf-docker](https://github.com/golift/telegraf-docker)
+- Docker: [https://hub.docker.com/r/golift/telegraf](https://hub.docker.com/r/golift/telegraf/)
+- Discord: [https://golift.io/discord](https://golift.io/discord)
 
 ## Problems
 
