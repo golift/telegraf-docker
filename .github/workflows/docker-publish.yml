@@ -16,6 +16,16 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - dockerfile: ./Dockerfile
+            image: ghcr.io/${{ github.repository }}
+            flavour: ""
+          - dockerfile: ./Dockerfile.alpine
+            image: ghcr.io/${{ github.repository }}
+            flavour: "-alpine"
     permissions:
       contents: read
       packages: write
@@ -47,7 +57,9 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ matrix.image }}
+          tags: |
+            type=raw,value=latest${{ matrix.flavour }}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
@@ -56,6 +68,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
+          file: ${{ matrix.dockerfile }}
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
