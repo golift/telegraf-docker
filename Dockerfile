@@ -1,4 +1,4 @@
-FROM telegraf:1.32@sha256:89fbebf8cfe8f668e9fa3723ef85b5bc9fedc5209c27a7c7d08e937938f10b0d
+FROM telegraf:1.32@sha256:e78339949933539597493f4035d7e42c2b0e4779ec4964fc5be5be04b2b583e0
 
 RUN apt update && apt install -y --no-install-recommends \
   sudo mtr-tiny lm-sensors smartmontools ipmitool nvme-cli && \
