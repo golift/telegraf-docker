@@ -1,0 +1,11 @@
+FROM telegraf:1.31-alpine@sha256:9f52c5e1ca21a0eae1d05d758904df4c8bc1aff7eca4f97f3134742347c45daa
+
+RUN apk add --quiet --no-cache \
+  sudo mtr lm-sensors smartmontools ipmitool nvme-cli && \
+  echo 'telegraf ALL=NOPASSWD:/usr/sbin/smartctl *' | tee    /etc/sudoers.d/telegraf && \
+  echo 'telegraf ALL=NOPASSWD:/usr/sbin/nvme *'     | tee -a /etc/sudoers.d/telegraf && \
+  echo 'telegraf ALL=NOPASSWD:/usr/bin/ipmitool *'  | tee -a /etc/sudoers.d/telegraf && \
+  echo "Done."
+
+LABEL org.opencontainers.image.source="https://github.com/influxdata/telegraf" \
+  org.opencontainers.image.url="https://github.com/golift/telegraf-docker"
