@@ -4,13 +4,13 @@ echo "Creating docker builder instance for ${DOCKERFILE_PATH}"
 docker buildx create --use
 
 echo "==> Building AMD64 ${DOCKERFILE_PATH}."
-docker buildx build --file "${DOCKERFILE_PATH}" --load --tag ${IMAGE_TAG}:amd64 --platform linux/amd64 .
+docker buildx build --file "${DOCKERFILE_PATH}" --load --tag ${DOCKER_TAG}:amd64 --platform linux/amd64 .
 echo "==> Building ARM64 ${DOCKERFILE_PATH}."
-docker buildx build --file "${DOCKERFILE_PATH}" --load --tag ${IMAGE_TAG}:arm64 --platform linux/arm64/v8 .
+docker buildx build --file "${DOCKERFILE_PATH}" --load --tag ${DOCKER_TAG}:arm64 --platform linux/arm64/v8 .
 
 if [ "${DOCKERFILE_PATH}" = "Dockerfile" ]; then
   echo "==> Building ARM32 ${DOCKERFILE_PATH}."
-  docker buildx build --file "${DOCKERFILE_PATH}" --load --tag ${IMAGE_TAG}:arm32 --platform linux/arm/v7 .
+  docker buildx build --file "${DOCKERFILE_PATH}" --load --tag ${DOCKER_TAG}:arm32 --platform linux/arm/v7 .
 fi
 
 exit 0
