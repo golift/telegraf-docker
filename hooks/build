@@ -12,3 +12,5 @@ if [ "${DOCKERFILE_PATH}" = "Dockerfile" ]; then
   echo "==> Building ARM32 ${DOCKERFILE_PATH}."
   docker buildx build --file "${DOCKERFILE_PATH}" --load --tag current:arm32 --platform linux/arm/v7 .
 fi
+
+exit 0
