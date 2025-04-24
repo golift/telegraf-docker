@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 
-if ! (docker buildx inspect | grep -Eq 'docker-container'); then
-  echo "Creating docker builder instance"
-  docker buildx create --use
-fi
+echo "Creating docker builder instance for ${DOCKERFILE_PATH}"
+docker buildx create --use
 
-echo "Building AMD64."
+echo "==> Building AMD64 ${DOCKERFILE_PATH}."
 docker buildx build --file "${DOCKERFILE_PATH}" --load --tag current:amd64 --platform linux/amd64 .
-echo "Building ARM64."
+echo "==> Building ARM64 ${DOCKERFILE_PATH}."
 docker buildx build --file "${DOCKERFILE_PATH}" --load --tag current:arm64 --platform linux/arm64/v8 .
 
-if [ "${DOCKERFILE_PATH}" == "Dockerfile" ]; then
-  echo "Building ARM32."
+if [ "${DOCKERFILE_PATH}" = "Dockerfile" ]; then
+  echo "==> Building ARM32 ${DOCKERFILE_PATH}."
   docker buildx build --file "${DOCKERFILE_PATH}" --load --tag current:arm32 --platform linux/arm/v7 .
 fi
