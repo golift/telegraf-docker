@@ -6,7 +6,7 @@ RUN apt update && apt install -y --no-install-recommends \
   echo 'telegraf ALL=NOPASSWD:/usr/sbin/smartctl *' | tee    /etc/sudoers.d/telegraf && \
   echo 'telegraf ALL=NOPASSWD:/usr/sbin/nvme *'     | tee -a /etc/sudoers.d/telegraf && \
   echo 'telegraf ALL=NOPASSWD:/usr/bin/ipmitool *'  | tee -a /etc/sudoers.d/telegraf && \
-  echo "Done."
+  echo "Ubuntu done."
 
 LABEL org.opencontainers.image.source="https://github.com/influxdata/telegraf" \
       org.opencontainers.image.url="https://github.com/golift/telegraf-docker"

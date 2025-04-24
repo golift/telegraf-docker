@@ -5,7 +5,7 @@ RUN apk add --quiet --no-cache \
   echo 'telegraf ALL=NOPASSWD:/usr/sbin/smartctl *' | tee    /etc/sudoers.d/telegraf && \
   echo 'telegraf ALL=NOPASSWD:/usr/sbin/nvme *'     | tee -a /etc/sudoers.d/telegraf && \
   echo 'telegraf ALL=NOPASSWD:/usr/bin/ipmitool *'  | tee -a /etc/sudoers.d/telegraf && \
-  echo "Done."
+  echo "Alpine done."
 
 LABEL org.opencontainers.image.source="https://github.com/influxdata/telegraf" \
   org.opencontainers.image.url="https://github.com/golift/telegraf-docker"
