@@ -16,5 +16,3 @@ echo "Building Alpine AMD64."
 docker buildx build --file Dockerfile.alpine --load --tag current-alpine:amd64 --platform linux/amd64 .
 echo "Building Alpine ARM64."
 docker buildx build --file Dockerfile.alpine --load --tag current-alpine:arm64 --platform linux/arm64/v8 .
-echo "Building Alpine ARM32."
-docker buildx build --file Dockerfile.alpine --load --tag current-alpine:arm32 --platform linux/arm/v7 .

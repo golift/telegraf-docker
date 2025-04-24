@@ -10,4 +10,3 @@ RUN apt update && apt install -y --no-install-recommends \
 
 LABEL org.opencontainers.image.source="https://github.com/influxdata/telegraf" \
       org.opencontainers.image.url="https://github.com/golift/telegraf-docker"
-

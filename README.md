@@ -29,15 +29,16 @@ Built automatically by DockerHub Cloud.
 docker pull golift/telegraf
 ```
 
-**This is a Docker Open Source Sposnsored project, so it has no pull limits.**
+**This is a [Docker-Sponsored Open Source Project](https://docs.docker.com/docker-hub/repos/manage/trusted-content/dsos-program/),**
+**so it has no pull limits.**
 
 ## When
 
 The renovate automatically merges pull request with a new Telegraf Docker manifest when a new Telegraf version is released.
 This auto-merge to the `main` branch triggers Docker Cloud to re-build this image.
 
-This should always be up to date with the `latest` tag of `telegraf` on Dockerhub. 
-The built manifest supports the same 3 architectures as the original image.
+This should always be up to date with the `latest` tag of `telegraf` on Docker Hub.
+The built manifest supports the same 3 architectures as the original ubuntu image, and 2 for alpine.
 
 ## Where
 
