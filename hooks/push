@@ -3,4 +3,4 @@
 PLAT="linux/amd64,linux/arm64/v8,linux/arm/v7"
 [ "${DOCKERFILE_PATH}" = "Dockerfile" ] || PLAT="linux/amd64,linux/arm64/v8"
 
-docker buildx build --push --tag "${IMAGE_NAME}" --platform ${PLAT}" .
+docker buildx build --push --tag "${IMAGE_NAME}" --platform "${PLAT}" .
