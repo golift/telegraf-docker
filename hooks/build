@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
 echo "Creating docker builder instance for ${DOCKERFILE_PATH}"
+
+DOCKER_TAG=$DOCKER_TAG
+if [[ $DOCKERFILE_PATH == *"alpine"* ]]; then
+  DOCKER_TAG="$DOCKER_TAG-alpine"
+fi
+
 docker buildx create --use
 
 echo "==> Building AMD64 ${DOCKERFILE_PATH}."
