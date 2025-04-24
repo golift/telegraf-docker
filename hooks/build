@@ -2,7 +2,6 @@
 
 echo "Creating docker builder instance for ${DOCKERFILE_PATH}"
 
-DOCKER_TAG=$DOCKER_TAG
 if [[ $DOCKERFILE_PATH == *"alpine"* ]]; then
   DOCKER_TAG="$DOCKER_TAG-alpine"
 fi
