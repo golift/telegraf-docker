@@ -5,4 +5,4 @@ PLAT="linux/amd64,linux/arm64/v8,linux/arm/v7"
 
 echo "Pushing ${IMAGE_NAME} with platforms: ${PLAT}"
 
-docker buildx build --push --tag "${IMAGE_NAME}" --platform "${PLAT}" .
+docker buildx build --push --file "${DOCKERFILE_PATH}" --tag "${IMAGE_NAME}" --platform "${PLAT}" .
