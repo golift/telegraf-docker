@@ -1,4 +1,4 @@
-FROM telegraf:1.37-alpine@sha256:a550e63a2efbea4b49596e475f0fcd3b057ff2ab0dfc8102357de289ee342a37
+FROM telegraf:1.38-alpine@sha256:96f24f9d67eab0a43da9f0d7d0929ab83196a94f57b547d59af293151c3c11c0
 
 RUN apk add --quiet --no-cache \
   sudo mtr lm-sensors smartmontools ipmitool nvme-cli && \
